@@ -1,0 +1,111 @@
+@import "../node_modules/sass-flex-mixin/flex";
+
+$MOBILE_BP: 800px;
+$FONT_COLOR: #6f7388;
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @include border-box;
+  margin: 0;
+  border: solid 15px #000F4B;
+  padding: 100px;
+  color: $FONT_COLOR;
+  font-family: 'Roboto', sans-serif;
+  @media (max-width: $MOBILE_BP) {
+    padding: 10%;
+  }
+}
+
+a {
+  color: $FONT_COLOR;
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+.container {
+  @include flexbox;
+  @include flex-direction(column);
+
+  height: 100%;
+
+  .header {
+
+    @include flex-direction(column);
+    @include flex;
+
+    .logo {
+      background: url(pics/logo-big-things.jpg) no-repeat;
+      background-size: contain;
+      max-width: 346px;
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    .text {
+      font-size: 27px;
+      max-width: 346px;
+      @media (max-width: $MOBILE_BP) {
+        text-align: center;
+      }
+    }
+
+
+    @media (max-width: $MOBILE_BP) {
+      .logo, .text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .footer {
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-items(flex-end);
+
+    @media (max-width: $MOBILE_BP) {
+      @include flex-direction(column);
+      @include align-items(center);
+    }
+
+    font-size: 13px;
+
+    .social {
+      @include flex;
+      .media {
+        margin-bottom: 5px;
+        img {
+          width: 20px;
+          margin-right: 3px;
+        }
+      }
+    }
+
+    .divider {
+      height: 2em; // ron 100px;
+    }
+
+    .terms {
+      text-align: right;
+    }
+
+    @media (max-width: $MOBILE_BP) {
+      &, .terms {
+        text-align: center;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "production": "some-project-name",
+    "default": "some-project-name"
+  }
+}

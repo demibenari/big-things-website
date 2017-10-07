@@ -1,0 +1,114 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+    ],
+    "rewrites": [ {
+      "source": "/public/**",
+      "destination": "/public/index.html"
+      }
+    ],
+    "headers": [ {
+      "source" : "/",
+        "headers" : [ {
+            "key" : "Access-Control-Allow-Headers",
+            "value" : "Access-Control-Allow-Origin, Content-Type, Access-Control-Allow-Methods, X-Frame-Options, X-XSS-Protection, Content-Security-Policy, X-Content-Type-Options"
+        }, {
+          "key" : "Access-Control-Allow-Origin",
+          "value" : "*"
+        }, {
+          "key" : "X-Frame-Options",
+          "value" : "SAMEORIGIN"
+        }, {
+          "key" : "X-XSS-Protection",
+          "value" : "1; mode=block"
+        }, {
+          "key" : "Content-Security-Policy",
+          "value" : "script-src 'self'; object-src 'self';"
+        }, {
+          "key" : "X-Content-Type-Options",
+          "value" : "nosniff"
+        }, {
+          "key" : "Access-Control-Allow-Methods",
+          "value" : "GET, POST"
+        }
+      ]
+    }, {
+      "source" : "**/*.@(eot|otf|ttf|ttc|woff|font.css|css|svg|png)",
+        "headers" : [ {
+          "key" : "Access-Control-Allow-Headers",
+          "value" : "Access-Control-Allow-Origin, Content-Type, Access-Control-Allow-Methods, X-Frame-Options, X-XSS-Protection, Content-Security-Policy, X-Content-Type-Options"
+        }, {
+          "key" : "Access-Control-Allow-Origin",
+          "value" : "*"
+        }, {
+          "key" : "X-Frame-Options",
+          "value" : "SAMEORIGIN"
+        }, {
+          "key" : "X-XSS-Protection",
+          "value" : "1; mode=block"
+        }, {
+          "key" : "Content-Security-Policy",
+          "value" : "script-src 'self'; object-src 'self';"
+        }, {
+          "key" : "X-Content-Type-Options",
+          "value" : "nosniff"
+        }
+      ]
+    }, {
+      "source" : "**/*.@(jpg|jpeg|gif|png)",
+      "headers" : [ {
+          "key" : "Access-Control-Allow-Headers",
+          "value" : "Access-Control-Allow-Origin, Content-Type, Access-Control-Allow-Methods, X-Frame-Options, X-XSS-Protection, Content-Security-Policy, X-Content-Type-Options"
+        }, {
+          "key" : "Cache-Control",
+          "value" : "max-age=7200"
+        }, {
+          "key" : "X-Frame-Options",
+          "value" : "SAMEORIGIN"
+        }, {
+          "key" : "X-XSS-Protection",
+          "value" : "1; mode=block"
+        }, {
+          "key" : "Content-Security-Policy",
+          "value" : "script-src 'self'; object-src 'self';"
+        }, {
+          "key" : "X-Content-Type-Options",
+          "value" : "nosniff"
+        }
+      ]
+      }, {
+      "source" : "404.html",
+      "headers" : [ {
+        "key" : "Access-Control-Allow-Headers",
+        "value" : "Access-Control-Allow-Origin, Content-Type, Access-Control-Allow-Methods, X-Frame-Options, X-XSS-Protection, Content-Security-Policy, X-Content-Type-Options"
+      }, {
+        "key" : "Access-Control-Allow-Origin",
+        "value" : "*"
+      },{
+        "key" : "Cache-Control",
+        "value" : "max-age=300"
+      }, {
+        "key" : "X-Frame-Options",
+        "value" : "SAMEORIGIN"
+      }, {
+        "key" : "X-XSS-Protection",
+        "value" : "1; mode=block"
+      }, {
+        "key" : "Content-Security-Policy",
+        "value" : "script-src 'self'; object-src 'self';"
+      }, {
+        "key" : "X-Content-Type-Options",
+        "value" : "nosniff"
+      }
+     ]
+    } ],
+    "cleanUrls": true,
+    "trailingSlash": false
+  }
+}
